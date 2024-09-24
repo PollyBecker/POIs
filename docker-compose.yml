@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./netbox_case
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+
+  frontend:
+    build: ./netbox_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
